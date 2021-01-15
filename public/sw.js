@@ -2,18 +2,18 @@ let version = "quiz-app";
 
 //Cache Files
 let cacheFiles = [
-  "/static/js/bundle.js",
-  "/static/js/1.chunk.js",
-  "/static/js/0.chunk.js",
-  "/static/js/main.chunk.js",
-  "/static/css/main.404f0354.chunk.css",
-  "/static/js/2.b04e9375.chunk.js",
-  "/static/js/main.21e71fcb.chunk.js",
-  "/manifest.json",
-  "/favicon.ico",
-  "/logo192.png",
-  "/",
-  "/index.html",
+  "./static/js/bundle.js",
+  "./static/js/1.chunk.js",
+  "./static/js/0.chunk.js",
+  "./static/js/main.chunk.js",
+  "./static/css/main.404f0354.chunk.css",
+  "./static/js/2.b04e9375.chunk.js",
+  "./static/js/main.21e71fcb.chunk.js",
+  "./manifest.json",
+  "./favicon.ico",
+  "./logo192.png",
+  "./",
+  "./index.html",
   "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
 ];
 
@@ -22,7 +22,6 @@ self.addEventListener("install", (e) => {
   self.skipWaiting();
   e.waitUntil(
     caches.open(version).then(function(cache){
-      cache.addAll(cacheFiles)
       console.log("cacheFiles", cacheFiles);
       // console.log("cacheFiles", cache);
       return cache.addAll(cacheFiles);
