@@ -19,7 +19,7 @@ self.addEventListener("install", (e) => {
   self.skipWaiting();
   e.waitUntil(
     caches.open(version).then((cache) => {
-      // console.log("cacheFiles", cacheFiles);
+      console.log("cacheFiles", cacheFiles);
       return cache.addAll(cacheFiles);
     })
   );
