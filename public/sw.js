@@ -16,6 +16,18 @@ let cacheFiles = [
   "./index.html",
   "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
 ];
+let cacheFilesForLive = [
+  "./static/css/main.404f0354.chunk.css",
+  "./static/js/2.b04e9375.chunk.js",
+  "./static/js/main.e9d04613.chunk.js",
+  "./sw.js",
+  "./manifest.json",
+  "./favicon.ico",
+  "./logo192.png",
+  "./",
+  "./index.html",
+  "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
+];
 
 // Install Service Woker
 self.addEventListener("install", (e) => {
@@ -24,7 +36,7 @@ self.addEventListener("install", (e) => {
     caches.open(version).then(function(cache){
       console.log("cacheFiles", cacheFiles);
       // console.log("cacheFiles", cache);
-      return cache.addAll(cacheFiles);
+      return cache.addAll(cacheFilesForLive);
     })
   );
 });
