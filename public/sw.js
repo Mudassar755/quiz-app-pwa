@@ -6,6 +6,9 @@ let cacheFiles = [
   "/static/js/1.chunk.js",
   "/static/js/0.chunk.js",
   "/static/js/main.chunk.js",
+  "/static/css/main.404f0354.chunk.css",
+  "/static/js/2.b04e9375.chunk.js",
+  "/static/js/main.21e71fcb.chunk.js",
   "/manifest.json",
   "/favicon.ico",
   "/logo192.png",
@@ -20,6 +23,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open(version).then((cache) => {
       console.log("cacheFiles", cacheFiles);
+      console.log("cacheFiles", cache);
       return cache.addAll(cacheFiles);
     })
   );
